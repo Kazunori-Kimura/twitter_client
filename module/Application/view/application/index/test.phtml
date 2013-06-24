@@ -1,0 +1,18 @@
+
+<?=$msg?><br>
+<?php if (isset($twSession))://?>
+<?=$userName?> (<?=$userId?>)
+
+  <form action="?command=tweet" method="POST">
+    いまどうしてる？ <input type="text" name="tweet" size="50"/><br>
+    <input type="hidden" name="command" value="tweet"/>
+    <input type="submit" value="ツイート"/>
+  </form>
+  <?php if(isset($result))echo$result?><br>
+  <a href="/application/twitter-oauth?command=logout">サインアウト</a><br/>
+
+<?php else:?>
+  <a href="/application/twitter-oauth?command=signin">サインイン</a>
+<?php endif ?>
+
+</html>
